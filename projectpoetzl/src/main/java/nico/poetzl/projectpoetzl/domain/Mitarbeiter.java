@@ -1,13 +1,14 @@
 package nico.poetzl.projectpoetzl.domain;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "mitarbeiter")
@@ -17,14 +18,17 @@ public class Mitarbeiter extends BasisPerson{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Temporal(TemporalType.DATE)
-	    @NotNull
-	    @Column(name = "birth_date", nullable = false)
-	private Date einstellungsdatum;
-	 	
+    @NotNull
+    @Column(name = "hire_date", nullable = false)
+	private Date einstellungsdatum; 	
+	
+	@Size(max = 255)
+    @NotNull
+    @Column(name = "gehalt", nullable = false, length = 255)
 	private float gehalt;
-	private Filiale filiale;
+	
 	
 	protected Mitarbeiter() {
         // required for JPA
@@ -50,13 +54,7 @@ public class Mitarbeiter extends BasisPerson{
 		this.gehalt = gehalt;
 	}
 
-	public Filiale getFiliale() {
-		return filiale;
-	}
-
-	public void setFiliale(Filiale filiale) {
-		this.filiale = filiale;
-	}
+	 
 
 }
 

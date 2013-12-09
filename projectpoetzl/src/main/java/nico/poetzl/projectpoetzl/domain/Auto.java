@@ -4,7 +4,10 @@ package nico.poetzl.projectpoetzl.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -14,13 +17,27 @@ public class Auto extends BasisKlasse{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@NotNull
-	 @Column(name = "marke", nullable = false, length = 255)
+	@Column(name = "marke", nullable = false, length = 255)
 	private String marke;
-	private int baujahr;
+	
+	@Temporal(TemporalType.DATE)
+    @NotNull
+    @Column(name = "baujahr", nullable = false)
+    private int baujahr;
+	
+	@Size(max = 255)
+    @NotNull
+    @Column(name = "seatscount", nullable = false, length = 255)
 	private int anzahlsitze;
+	
+	@Size(max = 255)
+    @NotNull
+    @Column(name = "horsepower", nullable = false, length = 255)
 	private int ps;
-	private Filiale filiale;
+	
+	
 	
 	 protected Auto() {
 	        // required for JPA
@@ -32,7 +49,7 @@ public class Auto extends BasisKlasse{
 		this.baujahr=baujahr;
 		this.anzahlsitze=anzahlsitze;
 		this.ps=ps;
-		this.filiale=filiale;
+		
 	}
 
 	public String getMarke() {
@@ -65,13 +82,5 @@ public class Auto extends BasisKlasse{
 
 	public void setPs(int ps) {
 		this.ps = ps;
-	}
-
-	public Filiale getFiliale() {
-		return filiale;
-	}
-
-	public void setFiliale(Filiale filiale) {
-		this.filiale = filiale;
 	}
 }

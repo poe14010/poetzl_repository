@@ -15,9 +15,10 @@ import javax.validation.constraints.Size;
 
 @MappedSuperclass
 public abstract class BasisPerson extends BasisKlasse implements Serializable {
+	
 	private static final long serialVersionUID = 4209931258096103397L;
 
-	  @Size(max = 255)
+	  	@Size(max = 255)
 	    @NotNull
 	    @Column(name = "name", nullable = false, length = 255)
 	    private String name;

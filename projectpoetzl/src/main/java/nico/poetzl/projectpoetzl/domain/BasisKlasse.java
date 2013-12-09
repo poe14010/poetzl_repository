@@ -35,7 +35,7 @@ public abstract class BasisKlasse implements Serializable {
 		if (!this.getClass().equals(o.getClass())) {
 			return false;
 		}
-		BasePersistable other = (BasePersistable) o;
+		BasisKlasse other = (BasisKlasse) o;
 		if (this.getId() == null) {
 			if (other.getId() != null)
 				return false;

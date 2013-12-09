@@ -1,14 +1,26 @@
 package nico.poetzl.projectpoetzl.domain;
 
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 public class Kauf extends BasisKlasse{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private float preis;
 	private float provision;
-	private Date kaufdat;
+	
+	@Temporal(TemporalType.DATE)
+    @NotNull
+    @Column(name = "buying_date", nullable = false)
+    private Date kaufdat;
+	
+	
 	private Kunde kunde;
 	private Auto auto;
 	private Mitarbeiter mitarbeiter;
