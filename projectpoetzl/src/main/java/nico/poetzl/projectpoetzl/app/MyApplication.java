@@ -1,10 +1,10 @@
-package nico.poetzl.projectpoetzl.timetable.app;
+package nico.poetzl.projectpoetzl.app;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import nico.poetzl.projectpoetzl.timetable.app.PersistenceFactorylmpl;
+import nico.poetzl.projectpoetzl.app.PersistenceFactorylmpl;
 import nico.poetzl.projectpoetzl.repositoryjpa.PersistenceFactory;
 
 //import at.grueneis.timetable.app.MyApplication;
@@ -20,7 +20,7 @@ public class MyApplication {
 
     private PersistenceFactory persistenceFactory;
 
-    private ServiceFactory serviceFactory;
+    private ServiceFactoryimpl serviceFactory;
 
     public MyApplication() {
         entityManagerFactory = Persistence.createEntityManagerFactory("spengergassePU");

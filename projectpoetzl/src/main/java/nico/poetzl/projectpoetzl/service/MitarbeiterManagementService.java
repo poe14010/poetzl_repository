@@ -1,3 +1,3 @@
 package nico.poetzl.projectpoetzl.service;
 
-public class TeacherManagementService {}
+public class MitarbeiterManagementService {}

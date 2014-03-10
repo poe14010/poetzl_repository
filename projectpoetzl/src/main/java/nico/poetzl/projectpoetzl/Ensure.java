@@ -1,4 +1,4 @@
-package nico.poetzl.projectpoetzl.timetable;
+package nico.poetzl.projectpoetzl;
 
 public class Ensure {
 

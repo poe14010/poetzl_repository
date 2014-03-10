@@ -1,4 +1,4 @@
-package nico.poetzl.projectpoetzl.timetable.app;
+package nico.poetzl.projectpoetzl.app;
 
 import java.util.HashMap;
 
