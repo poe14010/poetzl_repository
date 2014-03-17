@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import nico.poetzl.projectpoetzl.ServiceJpa.ServiceJpaFactory;
 import nico.poetzl.projectpoetzl.app.PersistenceFactorylmpl;
 import nico.poetzl.projectpoetzl.repositoryjpa.PersistenceFactory;
 
@@ -11,6 +12,7 @@ import nico.poetzl.projectpoetzl.repositoryjpa.PersistenceFactory;
 
 //import at.grueneis.timetable.app.ServiceFactoryImpl;
 //import at.grueneis.timetable.service.ServiceFactory;
+import nico.poetzl.projectpoetzl.app.ServiceFactoryimpl;
 
 
 public class MyApplication {
@@ -20,13 +22,13 @@ public class MyApplication {
 
     private PersistenceFactory persistenceFactory;
 
-    private ServiceFactoryimpl serviceFactory;
+    private ServiceJpaFactory serviceFactory;
 
     public MyApplication() {
         entityManagerFactory = Persistence.createEntityManagerFactory("spengergassePU");
         entityManager = entityManagerFactory.createEntityManager();
-        persistenceFactory = new PersistenceFactoryImpl(entityManager);
-        serviceFactory = new ServiceFactoryImpl(persistenceFactory);
+        persistenceFactory = new PersistenceFactorylmpl(entityManager);
+        serviceFactory = new ServiceFactoryimpl(persistenceFactory);
     }
 
     public void doSomething() {
